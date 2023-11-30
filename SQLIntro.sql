@@ -28,8 +28,11 @@ WHERE products.Name = 'MacBook';
 SELECT * FROM bestbuy.products
 WHERE onSale = 1; 
 -- find the average price of all products
-
+SELECT AVG(products.price) FROM bestbuy.products; 
 -- find all Geek Squad employees who don't have a middle initial
-
+SELECT * FROM bestbuy.employees AS e 
+WHERE e.MiddleInitial IS NULL and e.title = 'Geek Squad'; 
 -- find all products from the products table whose stock level is in the range -- of 500 to 1200. Order by Price from least to greatest. Hint: Use the between keyword
-
+SELECT * FROM bestbuy.products
+WHERE StockLevel BETWEEN 500 and 1200
+ORDER BY Price; 
